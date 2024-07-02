@@ -24,7 +24,7 @@ export function FormData(data: iFormData) {
           id={data.id}
           name={data.name}
           placeholder={data.placeholder}
-          className="w-[40%] ml-4 inline-block border-black rounded border"
+          className="w-[40%] ml-4 inline-block border-black rounded border text-black"
         />
       </div>
     </>

@@ -36,14 +36,12 @@ const userSchema = z
     },
   );
 
-export async function insertUserData(formdata: FormData) {
+export async function insertUserData(prevState: string, formdata: FormData) {
   const validationData = userSchema.safeParse(
     Object.fromEntries(formdata.entries()),
   );
-
   if (!validationData.success) {
-    // TODO
-    return;
+    return "Please enter your First Name and Last Name along with at least one of the following: Email, Cell Phone, or Address";
   }
 
   await db.insert(users).values(validationData.data);
