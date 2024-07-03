@@ -4,11 +4,11 @@ export default async function Home() {
   return (
     <>
       <div className="flex items-center justify-center min-h-screen">
-        <div>
+        <div className="bg-[#0000008a]">
           <h1 className="text-white text-4xl text-center pb-3">
             Mandir Timings
           </h1>
-          <div className="text-white text-2xl bg-[#0000008a]">
+          <div className="text-white text-2xl">
             <table className=" border-collapse">
               <thead>
                 <tr>

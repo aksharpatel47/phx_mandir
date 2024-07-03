@@ -42,14 +42,14 @@ export function LinkButton() {
     <>
       <div className="w-full text-center text-white flex items-center justify-center">
         <Link
-          className={`link p-2 ${pathname === "/data" ? "active" : "border-b-4 border-b-white"}`}
+          className={`link p-4 ${pathname === "/data" ? "active" : "border-b-4 border-b-white"}`}
           href="/"
         >
           Home
         </Link>
 
         <Link
-          className={`link p-2 ${pathname === "/" ? "active" : "border-b-4 border-b-white"}`}
+          className={`link p-4 ${pathname === "/" ? "active" : "border-b-4 border-b-white"}`}
           href="/data"
         >
           Registeration
