@@ -23,7 +23,7 @@ export default function RootLayout({
         className={
           inter.className +
           " bg-[url(https://lh3.googleusercontent.com/p/AF1QipNb-uMOJGL_EJVc2QxEBQSapTuECaHDS6onzfpz=s1360-w1360-h1020)]" +
-          " object-cover"
+          " bg-cover bg-no-repeat bg-center bg-fixed bg"
         }
       >
         <div>
