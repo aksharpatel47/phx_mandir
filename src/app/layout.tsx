@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { LinkButton } from "@/app/components/data";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,19 +22,12 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          " bg-[url(https://lh3.googleusercontent.com/p/AF1QipNb-uMOJGL_EJVc2QxEBQSapTuECaHDS6onzfpz=s1360-w1360-h1020)]"
+          " bg-[url(https://lh3.googleusercontent.com/p/AF1QipNb-uMOJGL_EJVc2QxEBQSapTuECaHDS6onzfpz=s1360-w1360-h1020)]" +
+          " object-cover"
         }
       >
         <div>
-          <div className="w-full text-center">
-            <Link href="/">
-              <Button className="mx-4">Home</Button>
-            </Link>
-
-            <Link href="/data">
-              <Button>Registeration</Button>
-            </Link>
-          </div>
+          <LinkButton />
           <div>{children}</div>
         </div>
       </body>
