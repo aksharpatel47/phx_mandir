@@ -1,0 +1,1 @@
+ALTER TABLE "users" ALTER COLUMN "cellPhone" SET DATA TYPE varchar;
