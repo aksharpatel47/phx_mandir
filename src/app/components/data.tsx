@@ -16,10 +16,10 @@ interface iFormData {
 export function FormData(data: iFormData) {
   return (
     <>
-      <div className="block mt-4">
+      <div className="block flex">
         <Label
           htmlFor={data.htmlFor}
-          className="inline-block w-[10%] text-left "
+          className="inline-block  text-left text-[18px] w-[300px]"
         >
           {data.str}{" "}
         </Label>
@@ -28,33 +28,27 @@ export function FormData(data: iFormData) {
           id={data.id}
           name={data.name}
           placeholder={data.placeholder}
-          className="w-[40%] ml-4 inline-block border-black rounded border text-black"
+          className=" ml-4 inline-block border-black rounded border text-black"
         />
       </div>
     </>
   );
 }
 
-export function LinkButton() {
+interface iLinkButton {
+  href: string;
+  text: string;
+}
+export function LinkButton(str: iLinkButton) {
   const pathname = usePathname();
-
   return (
     <>
-      <div className="w-full text-center text-white flex items-center justify-center">
-        <Link
-          className={`link p-4 ${pathname === "/data" ? "active" : "border-b-4 border-b-white"}`}
-          href="/"
-        >
-          Home
-        </Link>
-
-        <Link
-          className={`link p-4 ${pathname === "/" ? "active" : "border-b-4 border-b-white"}`}
-          href="/data"
-        >
-          Registeration
-        </Link>
-      </div>
+      <Link
+        href={str.href}
+        className={`py-4 rounded-full text-center ${pathname === `${str.href}` ? "bg-white text-black" : "bg-black text-white"}`}
+      >
+        {str.text}
+      </Link>
     </>
   );
 }

@@ -10,11 +10,11 @@ export function Form() {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div>
         {state && <div className="text-white text-center py-4">{state}</div>}
         <form
           action={formAction}
-          className="h-full w-[50%] mx-auto border border-black text-center my-4 py-4 bg-black text-white opacity-80"
+          className="w-[65%] flex flex-col gap-4 mx-auto border border-black text-center my-4 p-8 bg-[#0000008a] text-white "
         >
           <FormData
             type={"text"}
@@ -88,11 +88,10 @@ export function Form() {
             str={"Zip Code: "}
             placeholder="ZipCode"
           />
-          <div className="my-4">
-            <Button className="border border-[2px] block mx-auto border-black rounded">
-              Submit
-            </Button>
-          </div>
+
+          <Button className="border border-[2px] text-[18px] w-[100%] h-14 rounded block mx-auto border-black rounded">
+            Submit
+          </Button>
         </form>
       </div>
     </>
