@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          " h-screen overflow-hidden bg-[url(https://lh3.googleusercontent.com/p/AF1QipNb-uMOJGL_EJVc2QxEBQSapTuECaHDS6onzfpz=s1360-w1360-h1020)]"
+          " h-screen overflow-hidden bg-cover bg-[url(https://lh3.googleusercontent.com/p/AF1QipNb-uMOJGL_EJVc2QxEBQSapTuECaHDS6onzfpz=s1360-w1360-h1020)]"
         }
       >
         <div className="flex flex-row h-full gap-16">
