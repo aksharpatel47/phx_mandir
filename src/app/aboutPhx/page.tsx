@@ -18,22 +18,23 @@ export default function Page() {
           preserving physical spaces to uphold the philosophy of Hinduism. The
           rituals and traditions celebrated at mandirs connect individuals to
           their families, communities, and to Bhagwan. Mandirs ensure that the
-          legacy of Hinduism's oldest teachings is shared with future
+          legacy of Hinduism&apos;s oldest teachings is shared with future
           generations for many years to come.{" "}
         </p>
         <p>
           The size of mandirs vary from small, simple shrines to elaborate stone
           edifices. BAPS mandirs are traditionally categorized as either
-          'shikharbadhha mandirs' or ‘hari mandirs’. Shikharbadhha mandirs are
-          built largely of stone and signature architectural pinnacles whereas
-          hari mandirs are built using modern materials such as steel, concrete,
-          cement. Another major distinction is that in shikharbadhha mandirs,
-          the aarti is performed five times daily, while in hari mandirs, the
-          aarti is performed twice daily. In addition to spiritual practice,
-          BAPS mandirs teach the arts, language, music, and philosophy that are
-          the roots of Hindu heritage. BAPS mandirs also host various charitable
-          efforts for local communities throughout the year such as walkathons,
-          health fairs, blood drives, and more.
+          &apos;shikharbadhha mandirs&apos; or &apos;hari mandirs&apos;.
+          Shikharbadhha mandirs are built largely of stone and signature
+          architectural pinnacles whereas hari mandirs are built using modern
+          materials such as steel, concrete, cement. Another major distinction
+          is that in shikharbadhha mandirs, the aarti is performed five times
+          daily, while in hari mandirs, the aarti is performed twice daily. In
+          addition to spiritual practice, BAPS mandirs teach the arts, language,
+          music, and philosophy that are the roots of Hindu heritage. BAPS
+          mandirs also host various charitable efforts for local communities
+          throughout the year such as walkathons, health fairs, blood drives,
+          and more.
         </p>
       </div>
     </>
