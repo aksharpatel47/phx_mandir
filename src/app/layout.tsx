@@ -3,6 +3,15 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { LinkButton } from "@/app/components/data";
+import {
+  Clock3,
+  Info,
+  Home,
+  Send,
+  CalendarDays,
+  BookOpen,
+  KeyboardMusic,
+} from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,25 +27,66 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={
-          inter.className +
-          " h-screen overflow-hidden bg-cover bg-[url(https://lh3.googleusercontent.com/p/AF1QipNb-uMOJGL_EJVc2QxEBQSapTuECaHDS6onzfpz=s1360-w1360-h1020)]"
-        }
-      >
-        <div className="flex flex-row h-full gap-16">
-          <div className="border-r-solid  text-2xl flex flex-col gap-4 justify-center basis-[300px] grow-0 shrink-0 overflow-y-auto h-full">
-            <LinkButton href={"/events"} text={"Upcoming events"} />
-            <LinkButton href={"/timings"} text={"Mandir Timings"} />
-            <LinkButton href={"/aboutPhx"} text={"About BAPS Phoenix"} />
-            <LinkButton href={"/aboutBAPS"} text={"About BAPS"} />
-            <LinkButton href={"/data"} text={"Register"} />
+      <body className="{inter.className} ">
+        <div>
+          <div className="overflow-y-auto h-screen">
+            <div className="mb-64">{children}</div>
           </div>
-          <div className="overflow-y-auto flex-1 pr-16 pt-16">
-            <h1 className="text-4xl text-center text-white">
-              Welcome to BAPS Phoenix Mandir
-            </h1>
-            {children}
+          <div className="flex gap-4 justify-between fixed bottom-1 w-full bg-white p-4">
+            <Link href={"/"} className="text-black ">
+              <div className="flex justify-center">
+                <Home color="black" size={48} />
+              </div>
+              Home
+            </Link>
+            <Link href={"/data"} className="text-black">
+              <div className="flex justify-center">
+                <Send color="black" size={48} />
+              </div>
+              Registration
+            </Link>
+            <Link href={"/events"} className="text-black">
+              <div className="flex justify-center">
+                <CalendarDays color="black" size={48} />
+              </div>
+              Events
+            </Link>
+            <Link href={"/mandirTimings"} className="text-black ">
+              <div className="flex justify-center">
+                <Clock3 color="black" size={48} />
+              </div>
+              Mandir Timings
+            </Link>
+            <Link href={"/assemblyTimings"} className="text-black ">
+              <div className="flex justify-center">
+                <Clock3 color="black" size={48} />
+              </div>
+              Assembly Timings
+            </Link>
+            <Link href={"/gujaratiClass"} className="text-black ">
+              <div className="flex justify-center">
+                <BookOpen color="black" size={48} />
+              </div>
+              Gujarati Class
+            </Link>
+            <Link href={"/keyboard"} className="text-black ">
+              <div className="flex justify-center">
+                <KeyboardMusic color="black" size={48} />
+              </div>
+              Keyboard Class
+            </Link>
+            <Link href={"/aboutBAPS"} className="text-black">
+              <div className="flex justify-center">
+                <Info color="black" size={48} />
+              </div>
+              About BAPS
+            </Link>
+            <Link href={"/aboutPhx"} className="text-black">
+              <div className="flex justify-center">
+                <Info color="black" size={48} />
+              </div>
+              About Phoenix
+            </Link>
           </div>
         </div>
       </body>

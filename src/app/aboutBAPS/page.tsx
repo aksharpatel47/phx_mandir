@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <>
-      <div className="text-white bg-[#0000008a] p-8 text-[18px]">
+      <div className="text-black p-8 text-[18px] w-2/4 mx-auto">
         <p>
           Bochasanwasi Shri Akshar Purushottam Swaminarayan Sanstha (BAPS) is a
           socio-spiritual Hindu faith with its roots in the Vedas. It was

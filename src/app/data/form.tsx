@@ -14,7 +14,7 @@ export function Form() {
         {state && <div className="text-white text-center py-4">{state}</div>}
         <form
           action={formAction}
-          className="w-[65%] flex flex-col gap-4 mx-auto border border-black text-center my-4 p-8 bg-[#0000008a] text-white "
+          className=" flex flex-col gap-4 mx-auto w-2/4  text-center my-4 p-8  text-black "
         >
           <FormData
             type={"text"}
