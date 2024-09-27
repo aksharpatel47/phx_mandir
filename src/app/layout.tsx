@@ -51,7 +51,7 @@ export default function RootLayout({
               </div>
               Events
             </Link>
-            <Link href={"/mandirTimings"} className="text-black ">
+            <Link href={"/timings"} className="text-black ">
               <div className="flex justify-center">
                 <Clock3 color="black" size={48} />
               </div>
