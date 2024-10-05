@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-import { LinkButton } from "@/app/components/data";
 import {
-  Clock3,
-  Info,
-  Home,
-  Send,
-  CalendarDays,
   BookOpen,
+  CalendarDays,
+  Clock3,
+  Home,
+  Info,
   KeyboardMusic,
+  Send,
 } from "lucide-react";
+import { DashboardLink } from "@/app/components/dashboard_link";
+import { Nav } from "@/app/components/nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,69 +25,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const color = "black";
+  const size = 48;
   return (
     <html lang="en">
       <body className="{inter.className} ">
-        <div>
-          <div className="overflow-y-auto h-screen">
-            <div className="mb-64">{children}</div>
-          </div>
-          <div className="flex gap-4 justify-between fixed bottom-1 w-full bg-white p-4">
-            <Link href={"/"} className="text-black ">
-              <div className="flex justify-center">
-                <Home color="black" size={48} />
-              </div>
-              Home
-            </Link>
-            <Link href={"/data"} className="text-black">
-              <div className="flex justify-center">
-                <Send color="black" size={48} />
-              </div>
-              Registration
-            </Link>
-            <Link href={"/events"} className="text-black">
-              <div className="flex justify-center">
-                <CalendarDays color="black" size={48} />
-              </div>
-              Events
-            </Link>
-            <Link href={"/timings"} className="text-black ">
-              <div className="flex justify-center">
-                <Clock3 color="black" size={48} />
-              </div>
-              Mandir Timings
-            </Link>
-            <Link href={"/assemblyTimings"} className="text-black ">
-              <div className="flex justify-center">
-                <Clock3 color="black" size={48} />
-              </div>
-              Assembly Timings
-            </Link>
-            <Link href={"/gujaratiClass"} className="text-black ">
-              <div className="flex justify-center">
-                <BookOpen color="black" size={48} />
-              </div>
-              Gujarati Class
-            </Link>
-            <Link href={"/keyboard"} className="text-black ">
-              <div className="flex justify-center">
-                <KeyboardMusic color="black" size={48} />
-              </div>
-              Keyboard Class
-            </Link>
-            <Link href={"/aboutBAPS"} className="text-black">
-              <div className="flex justify-center">
-                <Info color="black" size={48} />
-              </div>
-              About BAPS
-            </Link>
-            <Link href={"/aboutPhx"} className="text-black">
-              <div className="flex justify-center">
-                <Info color="black" size={48} />
-              </div>
-              About Phoenix
-            </Link>
-          </div>
+        <div className="flex flex-col h-screen">
+          <div className="overflow-y-auto flex-1">{children}</div>
+          <Nav />
         </div>
       </body>
     </html>

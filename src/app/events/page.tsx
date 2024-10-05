@@ -4,21 +4,6 @@ export default function Page() {
   return (
     <>
       <Events
-        title={"Mahant Swami Maharaj’s Janma Jayanti"}
-        time={"Saturday, September 28, 2024 - 4 PM"}
-        paragraph={`His Holiness Mahant Swami Maharaj is the sixth spiritual successor
-                        of Bhagwan Swaminarayan and spiritual leader of the BAPS
-                        Swaminarayan Sanstha. He lives a devout, humble and service-focused
-                        life. He leads by example and inspires people to progress on the
-                        spiritual path. His virtuous lifestyle and profound devotion to
-                        Bhagwan Swaminarayan and his gurus are ideals towards which devotees
-                        strive. Join us to celebrate His Holiness Mahant Swami Maharaj’s
-                        Janma Jayanti.`}
-        img={
-          "https://www.baps.org/Data/Sites/1/Media/LocationImages/upcomingevents/WebImages/PMSM__2_2020_012_002.jpg"
-        }
-      ></Events>
-      <Events
         title={"Mahant Swami Maharaj Janma Jayanti - Mahila Celebration"}
         time={"Saturday, October 05, 2024 - 4 PM"}
         paragraph={

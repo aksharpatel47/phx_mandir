@@ -16,6 +16,9 @@ export function Form() {
           action={formAction}
           className=" flex flex-col gap-4 mx-auto w-2/4  text-center my-4 p-8  text-black "
         >
+          <h1 className="text-4xl border-b-2 border-slate-500 font-bold p-3 mb-3">
+            Registration
+          </h1>
           <FormData
             type={"text"}
             htmlFor={"firstName"}

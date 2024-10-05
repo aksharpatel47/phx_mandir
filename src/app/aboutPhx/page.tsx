@@ -2,6 +2,9 @@ export default function Page() {
   return (
     <>
       <div className="text-black p-8 text-[18px] w-2/4 mx-auto mb-5">
+        <h1 className="text-4xl border-b-2 text-center border-slate-500 font-bold p-3 mb-3">
+          About Phoenix Mandir
+        </h1>
         <p>
           A Mandir is a sacred Hindu place of worship. It represents the earthly
           home of Bhagwan, where one can visit to quiet the mind and experience
