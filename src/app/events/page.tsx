@@ -4,16 +4,6 @@ export default function Page() {
   return (
     <>
       <Events
-        title={"Mahant Swami Maharaj Janma Jayanti - Mahila Celebration"}
-        time={"Saturday, October 05, 2024 - 4 PM"}
-        paragraph={
-          "Celebrating the birth anniversary of His Holiness Mahant Swami Maharaj, the women of BAPS will organize a unique cultural program with the theme exploring the moments from their guru’s life that serve as teachable examples."
-        }
-        img={
-          "https://www.baps.org/Data/Sites/1/Media/LocationImages/upcomingevents/WebImages/PMSM_2020_029_001.jpg"
-        }
-      />
-      <Events
         title={"Diwali & Sharda (Chopda) Pujan"}
         time={"Thursday, October 31, 2024 - 5 PM - 7 PM"}
         paragraph={`Diwali – one of the most auspicious days in the Hindu calendar will be celebrated with great devotion and splendor. On this day, business-owners close existing account books and open new ones in preparation for the year ahead. Devotees also take stock of their spiritual relationship with Bhagwan, and consider any progress or regress they have made in the year past. The ceremony, known as Chopda Pujan, will take place in the evening. Hundreds of new account books – in a variety of paper and electronic forms – are sanctified through the showering of flowers petals and rice grains amid the chanting of Vedic hymns and prayers.`}

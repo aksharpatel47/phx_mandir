@@ -16,7 +16,7 @@ interface iFormData {
 export function FormData(data: iFormData) {
   return (
     <>
-      <div className="block flex">
+      <div className="flex">
         <Label
           htmlFor={data.htmlFor}
           className="inline-block  text-left text-[18px] w-[300px]"
@@ -28,6 +28,7 @@ export function FormData(data: iFormData) {
           id={data.id}
           name={data.name}
           placeholder={data.placeholder}
+          autoComplete="off"
           className=" ml-4 inline-block border-black rounded border text-black"
         />
       </div>
