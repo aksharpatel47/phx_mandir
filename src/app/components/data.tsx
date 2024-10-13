@@ -28,7 +28,7 @@ export function FormData(data: iFormData) {
           id={data.id}
           name={data.name}
           placeholder={data.placeholder}
-          autoComplete="off"
+          autoComplete="new-password"
           className=" ml-4 inline-block border-black rounded border text-black"
         />
       </div>
@@ -66,6 +66,7 @@ export function Events(data: iEvents) {
       <div className="flex items-center mx-auto pt-10 w-2/4 ">
         <img
           src={data.img}
+          alt={"Murti"}
           className="object-cover h-60 w-60 border-solid border-4 border-white float-left"
         />
         <div className="pl-5">
