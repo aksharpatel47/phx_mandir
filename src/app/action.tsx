@@ -19,15 +19,11 @@ const userSchema = z
   })
   .refine(
     (data) => {
-      if (
+      return !!(
         data.cellPhone ||
         data.email ||
         (data.addressLine1 && data.city && data.state && data.zipCode)
-      ) {
-        return true;
-      }
-
-      return false;
+      );
     },
     {
       message:
