@@ -19,7 +19,7 @@ export default function RootLayout({
   const size = 48;
   return (
     <html lang="en">
-      <body className="{inter.className} ">
+      <body className={`${inter.className}`}>
         <div className="flex flex-col h-screen">
           <div className="overflow-y-auto flex-1">{children}</div>
           <Nav />
