@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import {
-  BookOpen,
-  CalendarDays,
-  Clock3,
-  Home,
-  Info,
-  KeyboardMusic,
-  Send,
-} from "lucide-react";
-import { DashboardLink } from "@/app/components/dashboard_link";
 import { Nav } from "@/app/components/nav";
 
 const inter = Inter({ subsets: ["latin"] });

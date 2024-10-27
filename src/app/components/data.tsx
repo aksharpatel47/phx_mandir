@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+
 interface iFormData {
   type: string;
   htmlFor: string;
@@ -40,6 +41,7 @@ interface iLinkButton {
   href: string;
   text: string;
 }
+
 export function LinkButton(str: iLinkButton) {
   const pathname = usePathname();
   return (
@@ -60,6 +62,7 @@ interface iEvents {
   paragraph: string;
   img: string;
 }
+
 export function Events(data: iEvents) {
   return (
     <>

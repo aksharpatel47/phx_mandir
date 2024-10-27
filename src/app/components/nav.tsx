@@ -23,7 +23,7 @@ export function Nav() {
       </DashboardLink>
       <DashboardLink
         name={"Registration"}
-        href={"/data"}
+        href={"/registration"}
         currentUrl={currentUrl}
       >
         <Send color={color} size={size} />
@@ -40,14 +40,14 @@ export function Nav() {
       </DashboardLink>
       <DashboardLink
         name={"Assembly Timings"}
-        href={"/assemblyTimings"}
+        href={"/assembly-timings"}
         currentUrl={currentUrl}
       >
         <Clock3 color={color} size={size} />
       </DashboardLink>
       <DashboardLink
         name={"Gujarati Class"}
-        href={"/gujaratiClass"}
+        href={"/gujarati-class"}
         currentUrl={currentUrl}
       >
         <BookOpen color={color} size={size} />
@@ -61,14 +61,14 @@ export function Nav() {
       </DashboardLink>
       <DashboardLink
         name={"About BAPS"}
-        href={"/aboutBAPS"}
+        href={"/about-baps"}
         currentUrl={currentUrl}
       >
         <Info color={color} size={size} />
       </DashboardLink>
       <DashboardLink
         name={"About Phoenix Mandir"}
-        href={"/aboutPhx"}
+        href={"/about-phx"}
         currentUrl={currentUrl}
       >
         <Info color={color} size={size} />
