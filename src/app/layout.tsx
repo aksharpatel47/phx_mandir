@@ -15,8 +15,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const color = "black";
-  const size = 48;
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
