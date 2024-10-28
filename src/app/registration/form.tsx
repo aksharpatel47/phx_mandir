@@ -11,7 +11,7 @@ export function Form() {
   return (
     <>
       <div>
-        {state && <div className="text-white text-center py-4">{state}</div>}
+        {state && <div className="text-center py-4">{state}</div>}
         <form
           action={formAction}
           className=" flex flex-col gap-4 mx-auto w-2/4  text-center my-4 p-8  text-black "
