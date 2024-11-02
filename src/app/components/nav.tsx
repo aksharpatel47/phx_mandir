@@ -9,6 +9,7 @@ import {
   Info,
   KeyboardMusic,
   Send,
+  ThumbsUp,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -67,7 +68,7 @@ export function Nav() {
         <Info color={color} size={size} />
       </DashboardLink>
       <DashboardLink
-        name={"About Phoenix Mandir"}
+        name={"About Phx Mandir"}
         href={"/about-phx"}
         currentUrl={currentUrl}
       >
