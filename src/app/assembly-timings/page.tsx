@@ -20,8 +20,12 @@ export default function Page() {
               </thead>
               <tbody>
                 <tr>
+                  <td className="p-4">Satsang Sabha</td>
+                  <td className="p-4">4:00 PM - 6:00 PM</td>
+                </tr>
+                <tr>
                   <td className="p-4">Bal Sabha</td>
-                  <td className="p-4">4:30 PM - 5:30 PM</td>
+                  <td className="p-4">4:00 PM - 5:30 PM</td>
                 </tr>
                 <tr>
                   <td className="p-4">Balika Sabha</td>
@@ -37,7 +41,7 @@ export default function Page() {
                 </tr>
                 <tr>
                   <td className="p-4">Yuvak Sabha</td>
-                  <td className="p-4">3:30 PM - 5:00 PM</td>
+                  <td className="p-4">2:00 PM - 3:30 PM</td>
                 </tr>
                 <tr>
                   <td className="p-4">Yuvati Sabha</td>
@@ -46,10 +50,6 @@ export default function Page() {
                 <tr>
                   <td className="p-4">Mahila Sabha</td>
                   <td className="p-4">2:30 PM - 3:30 PM</td>
-                </tr>
-                <tr>
-                  <td className="p-4">Satsang Sabha</td>
-                  <td className="p-4">4:00 PM - 6:00 PM</td>
                 </tr>
               </tbody>
             </table>
