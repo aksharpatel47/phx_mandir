@@ -4,23 +4,6 @@ export default function Page() {
   return (
     <>
       <Events
-        title={"Mahashivaratri"}
-        time={"Wednesday, February 26, 2025 - 6:30 PM"}
-        paragraph={`cordially invites you, your family and friends to celebrate MAHASHIVARATRI
-followed by Mahaprasad.`}
-        img={
-          "https://www.baps.org/Data/Sites/1/Media/LocationImages/upcomingevents/WebImages/Mahashivratri_thumbnail.png"
-        }
-      />
-      <Events
-        title={"Fuldol - Bhagatji Maharaj Janma Jayanti"}
-        time={"Saturday, March 08, 2025 - 4 PM"}
-        paragraph={`Join us as we celebrate the birth anniversary of Bhagatji Maharaj, the second successor of Bhagwan Swaminarayan. We are also celebrating Fuldol or Pushpadolotsav on the arrival of spring. Traditionally a murti of Bhagwan is placed on a swing beautifully decorated with flowers. Devotees both serve and offer their sincere devotion to Bhagwan by gently setting the swing in motion, experiencing His darshan in this unique way. The changing season, new blooms, and vibrant colors of spring are celebrated by Hindus across the world.`}
-        img={
-          "https://www.baps.org/Data/Sites/1/Media/LocationImages/upcomingevents/WebImages/Fuldol_thumbnail.jpg"
-        }
-      />
-      <Events
         title={"Shri Swaminarayan Jayanti Mahila Celebration"}
         time={"Saturday, April 05, 2025 - 4 PM"}
         paragraph={`Celebrating the birth anniversaries of Bhagwan Swaminarayan and Bhagwan Ram, the women of BAPS will organize a cultural program featuring kirtans, spiritual discourses, traditional dances and dramas depicting the life of Bhagwan Swaminarayan and Bhagwan Ram.
