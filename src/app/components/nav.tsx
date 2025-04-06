@@ -75,13 +75,6 @@ export function Nav() {
       >
         <Info color={color} size={size} />
       </DashboardLink>
-      <DashboardLink
-        name={"Donate"}
-        href={"/donations"}
-        currentUrl={currentUrl}
-      >
-        <HandHelping color={color} size={size} />
-      </DashboardLink>
     </nav>
   );
 }
