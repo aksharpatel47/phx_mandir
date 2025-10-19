@@ -1,14 +1,14 @@
 "use client";
+import { useActionState } from "react";
 import { insertUserData } from "@/app/action";
 
 import { FormData } from "@/app/components/data";
 import { Button } from "@/components/ui/button";
-import { useFormState } from "react-dom";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 
 export function Form() {
-  const [state, formAction] = useFormState(insertUserData, "");
+  const [state, formAction, isPending] = useActionState(insertUserData, "");
 
   return (
     <>
@@ -32,6 +32,7 @@ export function Form() {
               name={"fullname"}
               placeholder={"Enter your FullName"}
               str={"FullName: "}
+              disabled={isPending}
             />
 
             <FormData
@@ -41,6 +42,7 @@ export function Form() {
               name={"email"}
               placeholder={"Enter your email"}
               str={"Email: "}
+              disabled={isPending}
             />
             <FormData
               type={"text"}
@@ -49,6 +51,7 @@ export function Form() {
               name={"cellPhone"}
               placeholder={"Enter your cellphone"}
               str={"Cellphone: "}
+              disabled={isPending}
             />
             <FormData
               type={"text"}
@@ -57,6 +60,7 @@ export function Form() {
               name={"addressLine"}
               str={"Address: "}
               placeholder={"Enter your Address"}
+              disabled={isPending}
             />
           </div>
 
@@ -68,8 +72,11 @@ export function Form() {
             </Alert>
           )}
 
-          <Button className="border border-[2px] text-[18px] w-[100%] h-14 rounded block mx-auto border-black rounded">
-            Submit
+          <Button
+            disabled={isPending}
+            className="border border-[2px] text-[18px] w-[100%] h-14 rounded block mx-auto border-black rounded"
+          >
+            {isPending ? "Submitting..." : "Submit"}
           </Button>
         </form>
       </div>

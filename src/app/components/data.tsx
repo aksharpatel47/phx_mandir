@@ -12,6 +12,7 @@ interface iFormData {
   name: string;
   placeholder?: string;
   str: string;
+  disabled?: boolean;
 }
 
 export function FormData(data: iFormData) {
@@ -30,6 +31,7 @@ export function FormData(data: iFormData) {
           name={data.name}
           placeholder={data.placeholder}
           autoComplete="new-password"
+          disabled={data.disabled}
           className=" ml-4 inline-block border-black rounded border text-black"
         />
       </div>
