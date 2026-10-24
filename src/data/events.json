@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-24T22:50:00Z",
+  "source": "https://www.baps.org/Global-Network/North-America/Phoenix/Upcoming-Events.aspx",
+  "events": [
+    {
+      "id": "2026-10-25-sharad-purnima",
+      "title": "Sharad Purnima - Akshar Jayanti",
+      "date": "2026-10-25",
+      "schedule": "Sunday, October 25, 2026 - 4 PM",
+      "paragraphs": [
+        "Celebrate the Ashwin full moon and Gunatitanand Swami’s birth anniversary with spiritual talks and devotional singing."
+      ],
+      "image": "/images/events/sharad-purnima.jpg"
+    },
+    {
+      "id": "2026-11-08-diwali",
+      "title": "Diwali & Sharda (Chopda) Pujan",
+      "date": "2026-11-08",
+      "schedule": "Sunday, November 08, 2026 - 6 PM - 9 PM",
+      "paragraphs": [
+        "Evening Diwali worship includes blessings for new paper and electronic business ledgers, alongside reflection on the year’s spiritual progress."
+      ],
+      "image": "/images/events/diwali.jpg"
+    },
+    {
+      "id": "2026-11-14-annakut",
+      "title": "Family Annakut Darshan",
+      "date": "2026-11-14",
+      "schedule": "Saturday, November 14, 2026 - 12 PM - 6 PM",
+      "paragraphs": [
+        "Families are invited for darshan of an extensive vegetarian food offering, prepared by devotees in gratitude to God."
+      ],
+      "image": "/images/events/annakut.jpg"
+    },
+    {
+      "id": "2026-12-12-mahila-celebration",
+      "title": "Pramukh Swami Maharaj Jayanti - Mahila (Ladies) Celebration",
+      "date": "2026-12-12",
+      "schedule": "Saturday, December 12, 2026 - 4 PM",
+      "paragraphs": [
+        "A women-led cultural celebration for women, honoring Pramukh Swami Maharaj’s example of spirituality and selfless service."
+      ],
+      "image": "/images/events/mahila-celebration.jpg"
+    },
+    {
+      "id": "2026-12-19-pramukh-swami-jayanti",
+      "title": "Pramukh Swami Maharaj's Birthday Celebration",
+      "date": "2026-12-19",
+      "schedule": "Saturday, December 19, 2026 - 4 PM",
+      "paragraphs": [
+        "Honor Pramukh Swami Maharaj’s birthday and his lifelong guidance, care for individuals, spirituality, and service."
+      ],
+      "image": "/images/events/pramukh-swami-jayanti.jpg"
+    }
+  ]
+}

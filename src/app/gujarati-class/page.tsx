@@ -1,37 +1,37 @@
+import type { Metadata } from "next";
+import { BookOpen } from "lucide-react";
+import { HelpNote, PageShell, Schedule } from "../components/page-shell";
+export const metadata: Metadata = { title: "Gujarati class" };
 export default function Page() {
   return (
-    <>
-      <div className="pt-10">
-        <section>
-          <div className="text-black text-2xl pt-10">
-            <table className=" border-collapse mx-auto">
-              <thead>
-                <tr>
-                  <th colSpan={2} className="p-4">
-                    <h1 className="text-black text-4xl text-center pb-3 border-b-2 border-slate-500">
-                      Gujarati Class Timings
-                    </h1>
-                  </th>
-                </tr>
-                <tr>
-                  <th></th>
-                  <th>Saturday</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="p-4">Bal Gujarati Classes</td>
-                  <td className="p-4">2:15 PM - 3:00 PM</td>
-                </tr>
-                <tr>
-                  <td className="p-4">Balika Gujarati Classes</td>
-                  <td className="p-4">2:15 PM - 3:00 PM</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+    <PageShell
+      eyebrow="LANGUAGE & HERITAGE"
+      title="A connection to our roots"
+      description="Gujarati classes offer children a space to learn the language and connect with their cultural heritage."
+    >
+      <div className="class-layout">
+        <div className="class-intro">
+          <BookOpen size={32} strokeWidth={1.3} />
+          <span className="gujarati-letter" lang="gu" aria-hidden="true">
+            અ
+          </span>
+          <h2>Gujarati classes</h2>
+          <p>
+            A language shared.
+            <br />A tradition carried forward.
+          </p>
+        </div>
+        <Schedule
+          title="Class timings"
+          rows={[
+            { name: "Bal Gujarati Classes", time: "2:15 pm – 3:00 pm" },
+            { name: "Balika Gujarati Classes", time: "2:15 pm – 3:00 pm" },
+          ]}
+        />
       </div>
-    </>
+      <HelpNote>
+        For class details and how to join, please speak with a mandir volunteer.
+      </HelpNote>
+    </PageShell>
   );
 }

@@ -1,80 +1,78 @@
 "use client";
 
-import { DashboardLink } from "@/app/components/dashboard_link";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import {
   BookOpen,
   CalendarDays,
   Clock3,
-  HandHelping,
-  Home,
-  Info,
-  KeyboardMusic,
-  Send,
-  ThumbsUp,
+  ContactRound,
+  HeartHandshake,
+  Landmark,
+  Piano,
+  UsersRound,
 } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { TempleMark } from "./temple-mark";
+import { CycleProgress } from "./cycle-progress";
+
+const destinations = [
+  { href: "/registration", label: "Stay Connected", icon: ContactRound },
+  { href: "/timings", label: "Mandir timings", icon: Clock3 },
+  { href: "/assembly-timings", label: "Assemblies", icon: UsersRound },
+  { href: "/events", label: "Events", icon: CalendarDays },
+  { href: "/gujarati-class", label: "Gujarati class", icon: BookOpen },
+  { href: "/keyboard", label: "Keyboard class", icon: Piano },
+  { href: "/about-baps", label: "About BAPS", icon: HeartHandshake },
+  { href: "/about-phx", label: "Our mandir", icon: Landmark },
+];
+const cycleRoutes = ["/", ...destinations.map(({ href }) => href)];
 
 export function Nav() {
-  const color = "black";
-  const size = 48;
-  const currentUrl = usePathname();
+  const pathname = usePathname();
+  const nav = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const element = nav.current;
+    if (!element) return;
+    const resize = new ResizeObserver(() => {
+      document.documentElement.style.setProperty(
+        "--kiosk-nav-height",
+        `${element.getBoundingClientRect().height}px`,
+      );
+    });
+    resize.observe(element);
+    return () => resize.disconnect();
+  }, []);
   return (
-    <nav className="flex gap-4 justify-evenly h-24">
-      <DashboardLink name={"Home"} href={"/"} currentUrl={currentUrl}>
-        <Home color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink
-        name={"Registration"}
-        href={"/registration"}
-        currentUrl={currentUrl}
-      >
-        <Send color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink name={"Events"} href={"/events"} currentUrl={currentUrl}>
-        <CalendarDays color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink
-        name={"Mandir Timings"}
-        href={"/timings"}
-        currentUrl={currentUrl}
-      >
-        <Clock3 color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink
-        name={"Assembly Timings"}
-        href={"/assembly-timings"}
-        currentUrl={currentUrl}
-      >
-        <Clock3 color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink
-        name={"Gujarati Class"}
-        href={"/gujarati-class"}
-        currentUrl={currentUrl}
-      >
-        <BookOpen color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink
-        name={"Keyboard Class"}
-        href={"/keyboard"}
-        currentUrl={currentUrl}
-      >
-        <KeyboardMusic color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink
-        name={"About BAPS"}
-        href={"/about-baps"}
-        currentUrl={currentUrl}
-      >
-        <Info color={color} size={size} />
-      </DashboardLink>
-      <DashboardLink
-        name={"About Phx Mandir"}
-        href={"/about-phx"}
-        currentUrl={currentUrl}
-      >
-        <Info color={color} size={size} />
-      </DashboardLink>
+    <nav ref={nav} className="kiosk-nav" aria-label="Main navigation">
+      <CycleProgress routes={cycleRoutes} />
+      <div className="nav-inner">
+        <Link
+          href="/"
+          className={`nav-home ${pathname === "/" ? "is-active" : ""}`}
+          aria-label="BAPS Phoenix Mandir home"
+          aria-current={pathname === "/" ? "page" : undefined}
+        >
+          <TempleMark className="brand-mark" />
+          <span className="brand-name">
+            BAPS Shri
+            <br />
+            Swaminarayan Mandir
+          </span>
+          <span className="brand-location">PHOENIX, ARIZONA</span>
+        </Link>
+        {destinations.map(({ href, label, icon: Icon }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`nav-item ${pathname === href ? "is-active" : ""}`}
+            aria-current={pathname === href ? "page" : undefined}
+          >
+            <Icon size={23} strokeWidth={1.6} aria-hidden="true" />
+            <span>{label}</span>
+          </Link>
+        ))}
+      </div>
     </nav>
   );
 }

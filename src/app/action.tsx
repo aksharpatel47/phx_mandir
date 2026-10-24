@@ -1,55 +1,37 @@
 "use server";
 
-import { z } from "zod";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { sendMessage } from "@/app/telegram/bot";
+import {
+  registrationMessage,
+  registrationSchema,
+  type RegistrationState,
+} from "@/lib/registration";
 
-const userSchema = z
-  .object({
-    fullname: z.string(),
-    email: z.string().email().optional().or(z.string().max(0)),
-    cellPhone: z.string().max(20).optional(),
-    addressLine: z.string().optional(),
-  })
-  .refine(
-    (data) => {
-      return !!(
-        data.fullname &&
-        (data.cellPhone || data.email || data.addressLine)
-      );
-    },
-    {
+export async function insertUserData(
+  _prevState: RegistrationState,
+  formData: FormData,
+): Promise<RegistrationState> {
+  const result = registrationSchema.safeParse(
+    Object.fromEntries(formData.entries()),
+  );
+  if (!result.success) {
+    return {
+      status: "error",
       message:
-        "You must provide either an email or a cell phone number or an address",
-    },
-  );
-
-// Escape markdown characters
-function escapeMarkdownV2(text: string) {
-  return text.replace(/([_*[\]()~`>#+\-=|{}.!])/g, "\\$1");
-}
-
-export async function insertUserData(prevState: string, formdata: FormData) {
-  const validationData = userSchema.safeParse(
-    Object.fromEntries(formdata.entries()),
-  );
-
-  if (!validationData.success) {
-    return "Please enter your Full Name along with at least one of the following: Email, Cell Phone, or Address";
+        "Please enter your full name and a valid email address, cell phone number, or address.",
+    };
   }
-
-  const textArr = [
-    ">New User Registration:",
-    `*Name:* ${escapeMarkdownV2(validationData.data.fullname)}`,
-    `*Email:* ${escapeMarkdownV2(validationData.data.email || "")}`,
-    `*Cell Phone:* ${escapeMarkdownV2(validationData.data.cellPhone || "")}`,
-    `*Address:* ${escapeMarkdownV2(validationData.data.addressLine || "")}`,
-  ];
-  const text = textArr.join("\n");
-
-  await sendMessage(text);
-
-  revalidatePath("/");
-  redirect("/");
+  try {
+    await sendMessage(registrationMessage(result.data));
+    return {
+      status: "success",
+      message: "Your registration has been received.",
+    };
+  } catch {
+    return {
+      status: "error",
+      message:
+        "We couldn’t send your details. Please try again or ask a mandir volunteer for help.",
+    };
+  }
 }
