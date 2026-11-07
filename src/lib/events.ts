@@ -1,4 +1,5 @@
 import { HTMLElement, Node, NodeType, parse } from "node-html-parser";
+import saved from "../data/events.json";
 
 export const EVENTS_URL =
   "https://www.baps.org/Global-Network/North-America/Phoenix/Upcoming-Events.aspx";
@@ -168,10 +169,38 @@ export function upcomingEvents(events: MandirEvent[], now = new Date()) {
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 
-// Local schedule correction supplied by the mandir. Scope it to this event
-// occurrence so subsequent years and unrelated events are not changed.
+// The supplied 2026 Diwali & Grand Annakut flyer takes precedence over
+// remote descriptions. Keep the copy in the saved snapshot for both paths.
+const flyerCorrections = [
+  {
+    id: "2026-11-08-diwali",
+    titles: ["Diwali & Sharda (Chopda) Pujan", "Diwali Chopda Pujan"],
+  },
+  {
+    id: "2026-11-14-annakut",
+    titles: ["Family Annakut Darshan", "Grand Annakut"],
+  },
+];
+
+// Scope local corrections to their occurrences so subsequent years and
+// unrelated events are not changed.
 export function applyEventCorrections(events: MandirEvent[]): MandirEvent[] {
   return events.map((event) => {
+    const correction = flyerCorrections.find(({ titles }) =>
+      titles.includes(event.title),
+    );
+    const flyerEvent = correction && saved.events.find(
+      (savedEvent) =>
+        savedEvent.id === correction.id && savedEvent.date === event.date,
+    );
+    if (flyerEvent) {
+      return {
+        ...event,
+        title: flyerEvent.title,
+        schedule: flyerEvent.schedule,
+        paragraphs: flyerEvent.paragraphs,
+      };
+    }
     if (
       event.date !== "2026-10-24" ||
       event.title !== "Sharad Purnima - Akshar Jayanti"
