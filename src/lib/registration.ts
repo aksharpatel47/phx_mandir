@@ -3,12 +3,12 @@ import { z } from "zod";
 export const registrationSchema = z
   .object({
     fullname: z.string().trim().min(1).max(120),
-    email: z.string().trim().email().max(254).or(z.literal("")),
+    email: z.string().trim().max(254).pipe(z.email().or(z.literal(""))),
     cellPhone: z.string().trim().max(20),
     addressLine: z.string().trim().max(500),
   })
   .refine((data) => Boolean(data.email || data.cellPhone || data.addressLine), {
-    message: "Please provide an email address, cell phone number, or address.",
+    error: "Please provide an email address, cell phone number, or address.",
   });
 
 export type RegistrationState = {

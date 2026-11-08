@@ -11,7 +11,7 @@ bun install --frozen-lockfile
 bun run dev
 ```
 
-Open http://localhost:3000. The app uses Next.js 16.4.3 and React 19.3.1. It does not fetch web fonts during a build.
+Open http://localhost:3000. The app uses Next.js 16.4.5 and React 19.3.1. It does not fetch web fonts during a build.
 
 ```sh
 bun run lint
@@ -22,6 +22,8 @@ bun run start
 ```
 
 Turbopack is the default bundler. Environments that prohibit its local worker sockets can use `bun run build --webpack` and `bun run dev --webpack`.
+
+The November 2026 dependency refresh includes the Next.js 16.4.5 security patch, Zod 4, Telegram API 2, and compatible updates to the existing tooling. Tailwind CSS 3 and tailwind-merge 2 remain paired; unrelated major tooling upgrades are deferred. The production dependency audit is clean as of November 7, 2026. One moderate development-only advisory remains: [minimatch pattern amplification](https://github.com/advisories/GHSA-g3hv-75wg-m249) in `@typescript-eslint/typescript-estree`. Its supported `^10.2.2` range excludes the patched version 11; revisit when the parser updates its dependency range.
 
 ## Routes and content
 
@@ -62,7 +64,7 @@ TELEGRAM_BOT_TOKEN=your-bot-token
 TELEGRAM_CHAT_ID=your-chat-id
 ```
 
-Registration requires a name and at least one contact method. The existing Telegram delivery integration is retained. Success appears only after Telegram confirms delivery; errors keep the entered values available for retry. Input is not stored in browser storage. Tests mock Telegram and never send real messages.
+Registration requires a name and at least one contact method. Registration uses Zod 4 validation and the Telegram API 2 client; the Telegram package includes its own TypeScript definitions. Success appears only after Telegram confirms delivery; errors keep the entered values available for retry. Input is not stored in browser storage. Tests mock Telegram and never send real messages.
 
 ## Deployment
 
